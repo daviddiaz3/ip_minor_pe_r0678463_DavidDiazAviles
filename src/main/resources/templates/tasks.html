@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasklist</title>
+</head>
+<body>
+<header>
+    <a href="?lang=en" th:text="#{lang.en}"></a>
+    <a href="?lang=nl" th:text="#{lang.nl}"></a>
+</header>
+<h4 th:text="#{tasks.title}"></h4>
+
+    <div th:if="${#lists.isEmpty(tasks)}">
+     <p th:text="#{tasks.empty}"></p>
+    </div>
+
+    <li th:each="task : ${tasks}">
+        <el th:text="#{tasks.task} + ${' ' + task.id +': ' + task.title +' '} +#{tasks.due} +${' '+ task.dueDate}">ID</el>
+    </li>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Task detail:</title>
+</head>
+<body>
+
+<header>
+    <a href="?lang=en" th:text="#{lang.en}"></a>
+    <a href="?lang=nl" th:text="#{lang.nl}"></a>
+</header>
+
+<h3 th:text="#{detail.title}"></h3>
+
+<ul >
+    <li th:text="#{detail.1} +${task.title}"></li>
+    <li th:text="#{detail.2} +${task.description}"></li>
+    <li th:text="#{detail.3} +${task.dueDate}"></li>
+</ul>
+
+<h4>Subtasks: </h4>
+
+<ul th:each="subTask : ${task.subTasks}">
+    <li th:text="${subTask.title +': ' + subTask.description }"></li>
+</ul>
+
+</body>
+</html>

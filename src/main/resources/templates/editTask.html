@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit task</title>
+</head>
+<body>
+
+<header>
+    <a href="?lang=en" th:text="#{lang.en}"></a>
+    <a href="?lang=nl" th:text="#{lang.nl}"></a>
+</header>
+
+<h3 th:text="#{edit.title}"></h3>
+
+<ul >
+    <li th:text="#{detail.1} + ${task.title}"></li>
+
+    <li th:text="#{detail.2} + ${task.description}"></li>
+
+    <li th:text="#{detail.3} + ${task.dueDate}"></li>
+</ul>
+
+<br>
+<h4 th:text="#{edit.new}"></h4>
+
+<form method="post" action="/tasks/editTask">
+    <div>
+        <label for="id">id: </label>
+        <input type="number" name="id" id="id" readonly th:value="${task.id}">
+    </div>
+    <div>
+        <label for="title" th:text="#{create.form1}"></label>
+        <input type="text" name="title" id="title" required th:value="${task.title}">
+    </div>
+    <div>
+        <label for="description" th:text="#{create.form2}"></label>
+        <input type="text" name="description" id="description" th:value="${task.description}">
+    </div>
+    <div>
+        <label for="date" th:text="#{create.form3}"></label>
+        <input type="datetime-local" name="date" id="date" min="" required>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

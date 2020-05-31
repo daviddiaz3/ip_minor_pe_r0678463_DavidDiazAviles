@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<header>
+    <a href="?lang=en" th:text="#{lang.en}"></a>
+    <a href="?lang=nl" th:text="#{lang.nl}"></a>
+</header>
+
+<h4 th:text="#{subtask.title} +${task.title}"></h4>
+
+<form method="post" th:action="${'/tasks/createSubTask/' +task.id}">
+    <div>
+        <label for="title" th:text="#{create.form1}"></label>
+        <input type="text" name="title" id="title" required>
+    </div>
+    <div>
+        <label for="description" th:text="#{create.form2}"> </label>
+        <input type="text" name="description" id="description" required>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <header>
+        <a href="?lang=en" th:text="#{lang.en}"></a>
+        <a href="?lang=nl" th:text="#{lang.nl}"></a>
+    </header>
+    <h1 th:text="#{index}"></h1>
+    <ul>
+        <li><a href="/tasks" th:text="#{index1}"></a></li>
+        <li><a href="/tasks/new" th:text="#{index2}"></a></li>
+    </ul>
+</body>
+</html>

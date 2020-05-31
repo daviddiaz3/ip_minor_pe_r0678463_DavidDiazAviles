@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task</title>
+</head>
+<body>
+<header>
+    <a href="?lang=en" th:text="#{lang.en}"></a>
+    <a href="?lang=nl" th:text="#{lang.nl}"></a>
+</header>
+
+    <h4 th:text="#{create.title}"></h4>
+
+    <form method="post" action="/tasks/createTask">
+        <div>
+            <label for="title" th:text="#{create.form1}"> </label>
+            <input type="text" name="title" id="title" required>
+        </div>
+        <div>
+            <label for="description" th:text="#{create.form2}"></label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <label for="date" th:text="#{create.form3}"> </label>
+            <input type="datetime-local" name="date" id="date" min="" required>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
