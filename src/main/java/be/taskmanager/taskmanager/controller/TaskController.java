@@ -56,7 +56,6 @@ public class TaskController {
         if(service.getTask(id) == null ) {
             model.addAttribute("error", "Task not found");
             return "error";
-            // make task exception
         }
         else
             return "editTask";
